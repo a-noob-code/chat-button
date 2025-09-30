@@ -1,41 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Floating Chat Button</title>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
+    /* Make sure body and html take full height */
+    html, body {
+      margin: 0; padding: 0; height: 100%;
+      overflow: visible;
     }
 
-    .chat-button {
-      position: fixed;
+    /* Container fills entire iframe */
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    /* Floating button fixed relative to iframe viewport */
+    .floating-button {
+      position: fixed; /* fix relative to iframe viewport */
       bottom: 20px;
       right: 20px;
+      background-color: #0078D4;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      font-size: 28px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
       z-index: 9999;
     }
 
-    .chat-button a {
-      background-color: #00897B;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
-
-    .chat-button a:hover {
-      background-color: #00695C;
+    .floating-button:hover {
+      background-color: #005a9e;
     }
   </style>
 </head>
 <body>
-  <div class="chat-button">
-    <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#chat/space/AAAAnM-vQtc" target="_blank">
-      💬 Chat with me
+  <div class="container">
+    <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#chat/space/AAAAnM-vQtc" 
+       target="_blank" 
+       class="floating-button" 
+       title="Chat with me">
+      💬
     </a>
   </div>
 </body>
